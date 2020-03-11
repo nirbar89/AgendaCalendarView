@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         List<Event> events = mockEvents();
 
         agendaCalendar = findViewById(R.id.calendar);
-
+        agendaCalendar.setLayoutDirection(View.LAYOUT_DIRECTION_LOCALE);
         MyEventAdapter myEventAdapter = new MyEventAdapter();
         agendaCalendar.setAdapter(myEventAdapter);
         myEventAdapter.setEvents(getPagedList());
