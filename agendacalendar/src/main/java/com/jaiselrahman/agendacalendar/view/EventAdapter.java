@@ -135,6 +135,7 @@ public abstract class EventAdapter<E extends BaseEvent, T extends List<E>>
 
     private static class HeaderViewHolder extends RecyclerView.ViewHolder {
         private TextView day, date;
+        private LinearLayout dateContainer;
         private DateTimeFormatter dateFormatter = new DateTimeFormatterBuilder()
                 .appendText(ChronoField.DAY_OF_WEEK, TextStyle.SHORT)
                 .toFormatter();
@@ -143,10 +144,12 @@ public abstract class EventAdapter<E extends BaseEvent, T extends List<E>>
             super(v);
             day = v.findViewById(R.id.day);
             date = v.findViewById(R.id.date);
+            dateContainer = v.findViewById(R.id.dateContainer);
 
         }
 
         void bind(BaseEvent event) {
+            dateContainer.setLayoutDirection(View.LAYOUT_DIRECTION_LOCALE);
             date.setText(String.valueOf(event.getTime().getDayOfMonth()));
             day.setText(dateFormatter.format(event.getTime()));
             if (DateUtils.isToday(event.getTime())) {
