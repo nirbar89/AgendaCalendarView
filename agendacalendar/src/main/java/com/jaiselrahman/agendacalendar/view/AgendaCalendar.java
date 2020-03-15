@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
@@ -121,7 +122,7 @@ public class AgendaCalendar extends CoordinatorLayout {
         a.recycle();
 
         calendarViewParent = v.findViewById(R.id.calendarViewParent);
-        calendarViewParent.setExpanded(false, false);
+        calendarViewParent.setExpanded(false, true);
         calendarViewParent.setBackgroundColor(calendarBackgroundColor);
         calendarViewParent.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
             verticalOffset = Math.abs(verticalOffset);
@@ -369,7 +370,8 @@ public class AgendaCalendar extends CoordinatorLayout {
             weekDays[6] = v.findViewById(R.id.weekDay7);
 
             for (int i = 0; i < DAYS_OF_WEEK.length; i++) {
-                weekDays[i].setText(DAYS_OF_WEEK[i]);
+                weekDays[i].setText(DateUtils.getDaysOfWeek()[i]);
+                Log.d("weekdays", weekDays[i].toString() );
                 weekDays[i].setTextSize(TypedValue.COMPLEX_UNIT_PX, calendarDateFontSize);
                 weekDays[i].setTextColor(calendarDateColor);
             }
