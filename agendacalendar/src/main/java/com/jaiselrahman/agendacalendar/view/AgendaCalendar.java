@@ -1,4 +1,4 @@
-package com.jaiselrahman.agendacalendar.view;
+package com.nirbar89.agendacalendar.view;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -18,9 +18,9 @@ import androidx.transition.ChangeBounds;
 import androidx.transition.TransitionManager;
 
 import com.google.android.material.appbar.AppBarLayout;
-import com.jaiselrahman.agendacalendar.R;
-import com.jaiselrahman.agendacalendar.model.BaseEvent;
-import com.jaiselrahman.agendacalendar.util.DateUtils;
+import com.nirbar89.agendacalendar.R;
+import com.nirbar89.agendacalendar.model.BaseEvent;
+import com.nirbar89.agendacalendar.util.DateUtils;
 import com.kizitonwose.calendarview.CalendarView;
 import com.kizitonwose.calendarview.model.CalendarDay;
 import com.kizitonwose.calendarview.model.CalendarMonth;
